@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206031432) do
+ActiveRecord::Schema.define(version: 20150207023150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,11 +22,23 @@ ActiveRecord::Schema.define(version: 20150206031432) do
     t.string   "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "location"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "events_tags", id: false, force: true do |t|
+    t.integer "event_id"
+    t.integer "tag_id"
+  end
+
+  add_index "events_tags", ["event_id", "tag_id"], name: "index_events_tags_on_event_id_and_tag_id", using: :btree
 
   create_table "events_users", id: false, force: true do |t|
     t.integer "event_id"
@@ -35,12 +47,29 @@ ActiveRecord::Schema.define(version: 20150206031432) do
 
   add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
 
+  create_table "tags", force: true do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "tag_id"
+  end
+
+  add_index "tags_users", ["user_id", "tag_id"], name: "index_tags_users_on_user_id_and_tag_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "auth_token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end
