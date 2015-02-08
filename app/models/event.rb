@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-	has_and_belongs_to_many :users
+	has_and_belongs_to_many :users, -> { uniq }
 	has_and_belongs_to_many :tags
 	belongs_to :user
 	has_attached_file :image
