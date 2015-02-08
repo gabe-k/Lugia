@@ -16,6 +16,10 @@ class EventsController < ApplicationController
 		@event.users << current_user if current_user
 	end
 
+	def tagged
+		@events = Tag.find_by_name(params[:tag]).events
+	end
+
 	def following
 		@events = Event.joins('JOIN events_tags ON events_tags.event_id = events.id JOIN tags_users ON tags_users.tag_id = events_tags.tag_id').select('DISTINCT(events.id), events.*').where('tags_users.user_id = ?', current_user.id).where('events.start_time >= current_timestamp').order(:start_time) if current_user
 	end

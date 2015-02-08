@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   post '/events/new' => 'events#new'
   get '/events/following' => 'events#following'
+  get '/events/tagged/:tag' => 'events#tagged'
   get '/events/:id' => 'events#show'
   get '/events/:id/users' => 'events#users'
   get '/users/:id/events' => 'users#events'
