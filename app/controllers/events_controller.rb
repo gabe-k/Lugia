@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 	end
 
 	def tagged
-		@events = Tag.find_by_name(params[:tag]).events
+		@events = Tag.find_by_text(params[:tag]).events
 	end
 
 	def following
