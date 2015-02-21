@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/tags/follow' => 'tags#follow'
   get '/tags/following' => 'tags#following'
   get '/tags/:id' => 'tags#show'
+  root 'events#index'
 end
