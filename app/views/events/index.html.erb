@@ -1,0 +1,23 @@
+<div id="container">
+  <div id="navigation">
+    <div id="search">
+      <%= form_tag %>
+      <%= text_field_tag "search", nil, class: "round"%>
+    </div>
+
+    <div class="event">
+      <% @events.each do |event| %>
+        <%= event.name %>
+        <%= event.description %>
+        <%= event.user_id %>
+        <%= image_tag event.image.url %>
+        <% event.tags.each do |tag| %>
+          <%= tag.text %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+  <div id="details">
+  </div>
+</div>

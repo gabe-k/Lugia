@@ -1,0 +1,71 @@
+body,html{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #FBF6F4;
+}
+
+nav{
+  border-bottom: 2px solid #F3734A;
+  overflow: hidden;
+  background: #fcfcfc;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+  color: #f3734a;
+}
+
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: right;
+  margin: 0 24px;
+}
+
+nav ul li{
+  display: inline;
+  color: #f3734a;
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+nav ul .button{
+  background: #F3734A;
+  padding: 6px 24px;
+  color: #f7f7f7;
+}
+
+/* */
+#container{
+  width: 100%;
+}
+
+#navigation{
+  float: left;
+  width: 400px;
+  border-right: solid 1px #F3734A;
+}
+
+#details{
+  float: left;
+}
+
+#search input{
+  border: none;
+  background: #fcfcfc;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#search{
+  background: #f3734a;
+  padding: 0 24px;
+}
