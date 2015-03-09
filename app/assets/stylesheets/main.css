@@ -1,71 +1,216 @@
-body,html{
-  padding: 0;
-  margin: 0;
+body, html {
+    padding: 0;
+    margin: 0;
 }
 
-body{
-  background: #FBF6F4;
+body {
+    background: #FBF6F4;
 }
 
-nav{
-  border-bottom: 2px solid #F3734A;
-  overflow: hidden;
-  background: #fcfcfc;
-  height: 60px;
-  font-family: 'Roboto', sans-serif;
+nav {
+    border-bottom: 2px solid #F3734A;
+    overflow: hidden;
+    background: #fcfcfc;
+    height: 60px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #logo{
-  color: #f3734a;
+  /* hacky way of doing this.  gotta work for now. */
+  position: absolute;
+  left: 24px;
+  top: 15px;
+  height: 30px;
 }
 
-nav ul{
-  list-style: none;
-  padding: 0;
+#logo img{
+  height: 30px;
+}
+
+.background{
+  background: url(banner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  max-height: 400px;
+  position: relative;
+  z-index: -200;
+}
+
+.backgroundCover{
+  top: 0; bottom: 0; left: 0; right: 0;
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  z-index: -100;
+}
+
+.titlecard h1{
   margin: 0;
-  float: right;
-  margin: 0 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #f3f3f3;
+  text-align: center;
+  font-size: 72px;
 }
 
-nav ul li{
-  display: inline;
-  color: #f3734a;
-  margin: 0 8px;
-  cursor: pointer;
-  font-size: 14px;
+.titlecard{
+  padding-top: 100px;
+  padding-bottom: 160px;
 }
 
-nav ul .button{
-  background: #F3734A;
-  padding: 6px 24px;
-  color: #f7f7f7;
+.infocard{
+  max-width: 900px;
+  width: 100%;
+  margin-top: -60px;
+  min-height: 200px;
+  background: #fcfcfc;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    right: 24px;
+    top: 18px;
+    position: absolute;
+}
+
+nav ul li {
+    display: inline;
+    color: #f3734a;
+    margin: 0 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav ul .button {
+    background: #F3734A;
+    padding: 6px 24px;
+    color: #f7f7f7;
 }
 
 /* */
-#container{
-  width: 100%;
+#container {
+    width: 100%;
 }
 
-#navigation{
-  float: left;
-  width: 400px;
-  border-right: solid 1px #F3734A;
+#navigation {
+    float: left;
+    width: 400px;
+    /*border-right: solid 1px #F3734A;*/
 }
 
-#details{
-  float: left;
+#details {
+    float: left;
 }
 
-#search input{
-  border: none;
-  background: #fcfcfc;
-  padding: 0.5em 1em;
-  margin: 1em 0;
-  width: 100%;
-  box-sizing: border-box;
+#search input {
+    border: none;
+    background: #fcfcfc;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#search{
-  background: #f3734a;
-  padding: 0 24px;
+#search {
+    background: #f3734a;
+    padding: 0 24px;
+    border-bottom: 2px solid #fcfcfc;
+}
+
+.event {
+    overflow: hidden;
+    /*border-bottom: solid 1px #F3734A;*/
+    padding: 20px;
+    background: #fcfcfc;
+    cursor: pointer;
+}
+
+.event:hover{
+    background: #FDEEE8;
+}
+
+.event.selected {
+    background: #f3734a;
+}
+
+.even {
+    background: #FBF6F4;
+}
+
+.event .image {
+    float: left;
+}
+
+.event .image img {
+    width: 70px;
+    border-radius: 8px;
+    border: #fcfcfc 3px solid;
+}
+
+.event .meta {
+    float: left;
+    overflow: hidden;
+}
+
+.event .meta .content {
+    padding-left: 12px;
+}
+
+.event h1 {
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #F3734A;
+}
+
+.event.selected h1 {
+    color: #fcfcfc;
+}
+
+.event p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 8px 0;
+}
+
+.event.selected p {
+    color: #fcfcfc;
+}
+
+.event p.time {
+    font-size: 12px;
+    color: grey;
+}
+
+.event.selected p.time {
+    color: #fcfcfc;
+}
+
+.event .tags {
+    float: left;
+    width: 100;
+    margin-top: 12px;
+    text-align: left;
+}
+
+.event .tags .singleTag {
+    display: inline-block;
+    color: #fcfcfc;
+    background: #F3734A;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.event.selected .tags .singleTag {
+    background: #fcfcfc;
+    color: #f3734a;
 }

@@ -1,0 +1,35 @@
+<div class="event
+          <% if even == true %> even
+          <% end %>">
+  <div class="image">
+    <%= image_tag event.image.url %>
+  </div>
+
+  <div class="meta">
+    <div class="content">
+      <h1>
+        <%= event.name %>
+      </h1>
+
+      <p>
+        <%= event.description %>
+      </p>
+
+      <p>
+        <%= event.location %>
+      </p>
+
+      <p class="time">
+        Starting <%= event.start_time %>
+      </p>
+    </div>
+  </div>
+
+  <div class="tags">
+    <% event.tags.each do |tag| %>
+      <div class="singleTag">
+        <%= tag.text %>
+      </div>
+    <% end %>
+  </div>
+</div>

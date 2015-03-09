@@ -2,22 +2,24 @@
   <div id="navigation">
     <div id="search">
       <%= form_tag %>
-      <%= text_field_tag "search", nil, class: "round"%>
+      <%= text_field_tag "search", nil, class: "round" %>
     </div>
 
-    <div class="event">
-      <% @events.each do |event| %>
-        <%= event.name %>
-        <%= event.description %>
-        <%= event.user_id %>
-        <%= image_tag event.image.url %>
-        <% event.tags.each do |tag| %>
-          <%= tag.text %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: 'events', locals: {events: @events} %>
 
   </div>
   <div id="details">
+    <div class="background">
+      <div class="backgroundCover">
+      </div>
+      <div class="titlecard">
+        <h1>
+          Event Title
+        </h1>
+      </div>
+    </div>
+    <div class="infocard">
+      
+    </div>
   </div>
 </div>

@@ -1,0 +1,5 @@
+<% index = 0 %>
+<% events.each do |event| %>
+  <%= render partial: "event", locals: {event: event, even: (index % 2) == 1} %>
+  <% index += 1 %>
+<% end %>
