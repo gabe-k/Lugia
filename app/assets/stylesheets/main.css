@@ -13,61 +13,86 @@ nav {
     background: #fcfcfc;
     height: 60px;
     font-family: 'Roboto', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-#logo{
-  /* hacky way of doing this.  gotta work for now. */
-  position: absolute;
-  left: 24px;
-  top: 15px;
-  height: 30px;
+#logo {
+    /* hacky way of doing this.  gotta work for now. */
+    position: absolute;
+    left: 24px;
+    top: 15px;
+    height: 30px;
 }
 
-#logo img{
-  height: 30px;
+#logo img {
+    height: 30px;
 }
 
-.background{
-  background: url(banner.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  max-height: 400px;
-  position: relative;
-  z-index: -200;
+.background {
+    background: url(banner.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    max-height: 400px;
+    position: relative;
+    z-index: -200;
 }
 
-.backgroundCover{
-  top: 0; bottom: 0; left: 0; right: 0;
-  position: absolute;
-  background: rgba(0,0,0,0.6);
-  z-index: -100;
+.backgroundCover {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -100;
 }
 
-.titlecard h1{
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  color: #f3f3f3;
-  text-align: center;
-  font-size: 72px;
+.titlecard h1 {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #f3f3f3;
+    text-align: center;
+    font-size: 72px;
 }
 
-.titlecard{
-  padding-top: 100px;
-  padding-bottom: 160px;
+.titlecard h3 {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #f3f3f3;
+    text-align: center;
+    font-size: 32px;
 }
 
-.infocard{
-  max-width: 900px;
-  width: 100%;
-  margin-top: -60px;
-  min-height: 200px;
-  background: #fcfcfc;
-  margin-left: auto;
-  margin-right: auto;
+.titlecard {
+    padding-top: 100px;
+    padding-bottom: 160px;
+}
+
+
+.infocard {
+    max-width: 900px;
+    width: 100%;
+    margin-top: -60px;
+    background: #fcfcfc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.infocard p{
+    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    padding: 36px 72px;
+    margin: 0;
 }
 
 nav ul {
@@ -101,11 +126,15 @@ nav ul .button {
 #navigation {
     float: left;
     width: 400px;
+    position: fixed;
+    bottom: 0;
+    top: 62px;
+    background: #fcfcfc;
     /*border-right: solid 1px #F3734A;*/
 }
 
 #details {
-    float: left;
+    float: right;
 }
 
 #search input {
@@ -131,7 +160,7 @@ nav ul .button {
     cursor: pointer;
 }
 
-.event:hover{
+.event:hover {
     background: #FDEEE8;
 }
 
@@ -200,17 +229,60 @@ nav ul .button {
     text-align: left;
 }
 
-.event .tags .singleTag {
+.headerTags{
+    text-align: center;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+}
+
+.headerTags .singleTag {
     display: inline-block;
     color: #fcfcfc;
     background: #F3734A;
     padding: 3px 10px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
 }
 
+.event .tags .singleTag{
+    color: #f3734a;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 0 4px;
+    font-size: 15px;
+    display: inline-block;
+}
+/*U
 .event.selected .tags .singleTag {
     background: #fcfcfc;
     color: #f3734a;
+}
+*/
+
+.event.selected .tags .singleTag {
+    color: #fcfcfc;
+}
+
+
+@media (max-width: 960px){
+    #navigation {
+        width: 250px;
+    }
+    #navigation .image{
+        display: none;
+    }
+    .time{
+        display: none;
+    }
+    #navigation .meta{
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 700px){
+    .titlecard h3{
+        display: none;
+    }
 }
